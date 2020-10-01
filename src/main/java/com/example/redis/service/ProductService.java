@@ -21,4 +21,8 @@ public class ProductService {
     public List<ProductDTO> findByProductName(String name) {
         return productDao.findByProductName(name);
     }
+
+    public ProductEntity findByProductId(Long proId) {
+        return productDao.findProductById(proId);
+    }
 }

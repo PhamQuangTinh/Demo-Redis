@@ -16,6 +16,7 @@ public class UserDao {
     public UserEntity addNewUser(UserDTO userDTO){
         UserEntity userEntity = UserDTO.transferObject(userDTO, UserEntity.class);
         return userRepository.saveAndFlush(userEntity);
+
     }
 
     public UserDTO findUserByIdDao(Long id) {
