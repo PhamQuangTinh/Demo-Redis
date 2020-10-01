@@ -1,4 +1,4 @@
-package com.example.redis.dao;
+package com.example.redis.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
 }
