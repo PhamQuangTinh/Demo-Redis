@@ -1,4 +1,4 @@
-package com.example.redis.dao;
+package com.example.redis.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,17 +14,18 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order_detail")
-public class OrderDetailEntity extends BaseEntity {
+@Table(name = "user")
+public class UserEntity extends BaseEntity{
 
     @Column
-    private Long productId;
+    private String username;
 
     @Column
-    private int qty;
+    private String password;
 
     @Column
-    private Long userOrderId;
+    private String fullName;
 
-
+    @Column
+    private String phoneNumber;
 }

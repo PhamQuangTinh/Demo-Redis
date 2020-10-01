@@ -1,4 +1,4 @@
-package com.example.redis.dao;
+package com.example.redis.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,18 +14,9 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
-public class UserEntity extends BaseEntity{
+@Table(name = "category")
+public class CategoryEntity extends BaseEntity {
 
     @Column
-    private String username;
-
-    @Column
-    private String password;
-
-    @Column
-    private String fullName;
-
-    @Column
-    private String phoneNumber;
+    private String categoryName;
 }
