@@ -37,4 +37,9 @@ public class ProductDao {
 
 
     }
+
+    public ProductEntity findProductById(Long proId) {
+        return productRepository.findById(proId).orElse(null);
+
+    }
 }

@@ -1,9 +1,7 @@
 package com.example.redis.rest;
 
 
-import com.example.redis.request.OrderRequest;
-import com.example.redis.request.RemoveItemOrder;
-import com.example.redis.request.UpdateOrderReq;
+import com.example.redis.request.*;
 import com.example.redis.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +32,21 @@ public class OrderRest {
     @PostMapping("/post/delete_item_order")
     public ResponseEntity<?> removeItemOrder(@RequestBody RemoveItemOrder item){
         return ResponseEntity.ok((orderService.removeItemOrderService(item.getOrderId(),item.getProIds())));
+    }
+
+    @PostMapping("/post/add_product_to_cart")
+    public ResponseEntity<?> addProductToCart(@RequestBody AddProductToCartReq req){
+        return ResponseEntity.ok(orderService.addProductToCartService(req));
+    }
+
+    @GetMapping("/get/get_cart_items")
+    public ResponseEntity<?> getCartItems(@RequestParam("user_id") Long userId){
+        return ResponseEntity.ok(orderService.getListOrderProduct(userId));
+    }
+
+    @PostMapping("/post/paying")
+    public ResponseEntity<?> orderProductFromCart(@RequestBody OrderPayingRequest req){
+        return ResponseEntity.ok(orderService.orderProductFromCart(req.getUserId()));
     }
 
 }
